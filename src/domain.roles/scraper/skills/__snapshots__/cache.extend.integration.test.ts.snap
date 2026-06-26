@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`cache.extend given: [case1] cache files exist for account when: [t0] cache.extend is called with --by PT24H then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ cache.extend
+   ├─ account: test@example.com
+   ├─ hash: 973dfe463ec8
+   ├─ cache: .cache/TIMESTAMP
+   ├─ by: PT24H (+86400000ms)
+   ├─ files: 2
+   └─ extended
+      ├─ getProfile.973dfe463ec8..abc123.v1.json (+86400000ms)
+      └─ getSubscriptions.973dfe463ec8..def456.v1.json (+86400000ms)
+"
+`;
+
+exports[`cache.extend given: [case4] no cache files exist for account when: [t0] cache.extend is called then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+📽️ cache.extend
+   ├─ account: nobody@example.com
+   ├─ hash: e788ea201469
+   ├─ cache: .cache/TIMESTAMP
+   ├─ by: PT1H
+   ├─ files: 0
+   └─ hint: no cache files found for this account
+"
+`;
+
+exports[`cache.extend given: [case5] --for is not provided when: [t0] cache.extend is called without --for then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --for required
+   hint: specify account email, e.g., --for user@example.com
+"
+`;
+
+exports[`cache.extend given: [case6] --by is not provided when: [t0] cache.extend is called without --by then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --by required
+   hint: specify duration, e.g., --by PT24H, --by PT1H30M, --by PT30M
+"
+`;
+
+exports[`cache.extend given: [case7] --cache-dir is not provided when: [t0] cache.extend is called without --cache-dir then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --cache-dir required
+   hint: rhx cache.extend --for user@example.com --by PT24H --cache-dir .cache/myapp
+"
+`;
+
+exports[`cache.extend given: [case9] invalid duration format when: [t0] cache.extend is called with invalid duration then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ BadRequestError: invalid duration format
+   context: {"given":"invalid"}
+   hint: use ISO 8601 format, e.g., PT24H, PT1H30M, PT30M, P1D
+"
+`;
+
+exports[`cache.extend given: [case10] --help when: [t0] cache.extend is called with --help then: output matches snapshot 1`] = `
+"🦎 rock solid
+
+📽️ cache.extend --help
+
+usage:
+  rhx cache.extend --for EMAIL --by DURATION --cache-dir PATH
+
+options:
+  --help                show this message
+  --for EMAIL           account email to extend cache for (required)
+  --by DURATION         ISO 8601 duration, e.g., PT24H, PT1H30M (required)
+  --cache-dir PATH      path to cache directory (required)
+
+description:
+  extends cache ttl for a given account. sets expiresAtMse
+  to now + duration. idempotent: safe to call multiple times.
+
+example:
+  rhx cache.extend --for user@example.com --by PT24H --cache-dir .cache/myapp
+"
+`;

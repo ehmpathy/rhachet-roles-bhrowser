@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.stop given: [case1] with active browser when: [t0] skill is invoked then: it stops browser and removes state file: stderr 1`] = `""`;
+
+exports[`browser.stop given: [case1] with active browser when: [t0] skill is invoked then: it stops browser and removes state file: stdout 1`] = `
+"🦎 suns down
+
+📽️ browser.stop
+   ├─ session: stop-case1
+   ├─ port: PORT
+   │
+   ├─ browser: stopped
+   └─ state: removed
+"
+`;
+
+exports[`browser.stop given: [case2] without browser (idempotent) when: [t0] skill is invoked without browser active then: it succeeds with no-op message: no-op stderr 1`] = `""`;
+
+exports[`browser.stop given: [case2] without browser (idempotent) when: [t0] skill is invoked without browser active then: it succeeds with no-op message: no-op stdout 1`] = `
+"🦎 suns down
+
+📽️ browser.stop
+   ├─ session: stop-case2
+   ├─ port: PORT
+   │
+   ├─ browser: no browser found
+   └─ state: no state file
+"
+`;
+
+exports[`browser.stop given: [case3] --help when: [t0] browser.stop is called with --help then: shows help: stderr 1`] = `""`;
+
+exports[`browser.stop given: [case3] --help when: [t0] browser.stop is called with --help then: shows help: stdout 1`] = `
+"🦎 lets get some sun...
+
+📽️ browser.stop --help
+   ├─ purpose: stop a persistent browser
+   ├─ usage: browser.stop [--session NAME]
+   └─ options
+      ├─ --help: show this message
+      └─ --session NAME: browser session name (default: default)
+"
+`;

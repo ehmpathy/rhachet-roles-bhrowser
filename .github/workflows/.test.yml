@@ -140,6 +140,21 @@ jobs:
           path: ./node_modules
           key: ${{ needs.install.outputs.node-modules-cache-key }}
 
+      # .note = browser.start.sh searches ~/.cache/ms-playwright (default path)
+      - name: get playwright browsers from cache
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: install playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install chromium chromium-headless-shell
+
+      - name: install playwright system deps
+        run: npx playwright install-deps chromium
+
       - name: test:unit
         run: THOROUGH=true npm run test:unit
 
@@ -207,6 +222,21 @@ jobs:
         with:
           path: ./node_modules
           key: ${{ needs.install.outputs.node-modules-cache-key }}
+
+      # .note = browser.start.sh searches ~/.cache/ms-playwright (default path)
+      - name: get playwright browsers from cache
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: install playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install chromium chromium-headless-shell
+
+      - name: install playwright system deps
+        run: npx playwright install-deps chromium
 
       - name: get aws auth, if creds supplied
         if: ${{ inputs.creds-aws-role-arn }}

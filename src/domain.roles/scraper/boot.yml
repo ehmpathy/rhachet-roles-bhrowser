@@ -1,0 +1,8 @@
+always:
+  briefs:
+    say:
+      - briefs/cache/rule.require.remote-state-cache.md
+      - briefs/cache/howto.cache-browser-scrapes.md
+    ref:
+      - briefs/cache/ref.remote-state-query-cache.md
+      - briefs/cache/howto.setup-cache-infrastructure.md

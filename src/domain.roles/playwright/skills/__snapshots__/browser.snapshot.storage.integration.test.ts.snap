@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.snapshot.storage given: [case1] with active browser when: [t0] skill is invoked then: it captures storage (localStorage, sessionStorage, cookies): stderr 1`] = `""`;
+
+exports[`browser.snapshot.storage given: [case1] with active browser when: [t0] skill is invoked then: it captures storage (localStorage, sessionStorage, cookies): stdout 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot storage
+   └─ .cache/browser.snapshot-storage-case1/snapshot.ISOTIME.tabN/snapshot.storage.json
+"
+`;
+
+exports[`browser.snapshot.storage given: [case2] without --tab when: [t0] skill is invoked without --tab then: it fails with usage message: stderr 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --focused OR (--tab + --url) required
+   hint: use --focused for active tab or --tab N --url 'pattern' for specific tab
+   │
+   └─ usage
+      ├─ rhx browser.snapshot --focused                     # snapshot focused tab
+      └─ rhx browser.snapshot --tab 0 --url 'example.com'   # snapshot by index
+"
+`;
+
+exports[`browser.snapshot.storage given: [case2] without --tab when: [t0] skill is invoked without --tab then: it fails with usage message: stdout 1`] = `""`;
+
+exports[`browser.snapshot.storage given: [case3] without browser when: [t0] skill is invoked without active browser then: it fails with no browser found: stderr 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: no browser found
+   context: {"session":"snapshot-storage-no-browser"}
+   hint: start a browser first via: rhx browser.start --session snapshot-storage-no-browser --mode HEADFUL
+"
+`;
+
+exports[`browser.snapshot.storage given: [case3] without browser when: [t0] skill is invoked without active browser then: it fails with no browser found: stdout 1`] = `""`;
+
+exports[`browser.snapshot.storage given: [case4] --help when: [t0] skill is invoked with --help then: shows help: stderr 1`] = `""`;
+
+exports[`browser.snapshot.storage given: [case4] --help when: [t0] skill is invoked with --help then: shows help: stdout 1`] = `
+"🦎 lets get some sun...
+
+📽️ browser.snapshot storage --help
+   ├─ purpose: capture localStorage and sessionStorage from browser tab
+   ├─ usage: browser.snapshot storage --focused | --tab N --url 'pattern'
+   └─ options
+      ├─ --help: show this message
+      ├─ --focused: snapshot the focused tab
+      ├─ --tab N: tab index (0-based, negative from end)
+      ├─ --url 'pattern': verify tab URL contains pattern
+      ├─ --session NAME: browser session name (default: default)
+      └─ --output PATH: output directory prefix
+"
+`;

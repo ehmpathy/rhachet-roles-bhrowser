@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.lifecycle given: [case1] no browser active when: [t0] browser.start is called in headless mode then: output matches snapshot 1`] = `
+"🦎 lets get some sun
+
+📽️ browser.start
+   ├─ session: test-lifecycle
+   ├─ mode: HEADLESS
+   ├─ port: PORT
+   ├─ wsEndpoint: ws://localhost:PORT/devtools/browser/UUID
+   ├─ state: .cache/browser.test-lifecycle/ws-endpoint
+   │
+   ├─ tests will auto-discover and reuse this window
+   │
+   └─ to stop: rhx browser.stop --session test-lifecycle
+"
+`;
+
+exports[`browser.lifecycle given: [case1] no browser active when: [t1] browser.describe is called then: output matches snapshot 1`] = `
+"🦎 rock solid
+
+📽️ browser.describe
+   ├─ session: test-lifecycle
+   ├─ tabs: 1
+   │
+   └─ [0] New Tab ← focused
+      chrome://new-tab-page/
+"
+`;
+
+exports[`browser.lifecycle given: [case1] no browser active when: [t2] browser.stop is called then: output matches snapshot 1`] = `
+"🦎 suns down
+
+📽️ browser.stop
+   ├─ session: test-lifecycle
+   ├─ port: PORT
+   │
+   ├─ browser: stopped
+   └─ state: removed
+"
+`;
+
+exports[`browser.lifecycle given: [case2] browser already active when: [t0] browser.start is called again then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: browser already active
+   context: {"session":"test-lifecycle"}
+   hint: use --refresh to kill and restart, or use a different --session
+"
+`;
+
+exports[`browser.lifecycle given: [case3] browser not active when: [t0] browser.describe is called then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: no browser found
+   context: {"session":"test-lifecycle"}
+   hint: start a browser first via: rhx browser.start --session test-lifecycle --mode HEADFUL
+"
+`;
+
+exports[`browser.lifecycle given: [case4] start requires explicit mode when: [t0] browser.start is called without mode then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --mode required
+   context: {"valid":["HEADFUL","HEADLESS"]}
+   │
+   └─ usage
+      ├─ rhx browser.start --mode HEADFUL
+      └─ rhx browser.start --mode HEADLESS
+"
+`;

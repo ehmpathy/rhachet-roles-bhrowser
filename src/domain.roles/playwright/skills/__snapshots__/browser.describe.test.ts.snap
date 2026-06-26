@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.describe given: [case1] browser with no pages when: [t0] describeTabs is called then: output matches snapshot 1`] = `
+"🦎 rock solid
+
+📽️ browser.describe
+   ├─ session: test-zero-pages
+   │
+   └─ no browser contexts found"
+`;

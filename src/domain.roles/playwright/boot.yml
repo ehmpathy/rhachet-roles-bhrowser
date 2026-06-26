@@ -1,4 +1,37 @@
 always:
   briefs:
-    say: []
-    ref: []
+    say:
+      # core rules - loaded in full
+      - briefs/diagnosis/rule.require.snapshot-before-assume.md
+      - briefs/diagnosis/rule.require.snapshot-before-debug.md
+      - briefs/verification/rule.require.action-verification.md
+      - briefs/spa/rule.require.wait-for-target-element.md
+    ref:
+      # diagnosis
+      - briefs/diagnosis/howto.browser-diagnosis.md
+      - briefs/diagnosis/rule.require.snapshot-latest-tab.md
+      - briefs/diagnosis/rule.require.grep-html-before-selector-guess.md
+      # verification
+      - briefs/verification/rule.forbid.unverified-actions.md
+      # spa
+      - briefs/spa/rule.require.spa-navigation-fail-fast.md
+      - briefs/spa/rule.require.wait-for-content-not-shell.md
+      - briefs/spa/rule.require.wait-for-react-render.md
+      # auth
+      - briefs/auth/howto.cross-session-auth.md
+      # stealth
+      - briefs/stealth/ref.antibot-escalation.md
+      # reliability
+      - briefs/reliability/ref.cdp-reconnection-patterns.md
+      - briefs/reliability/rule.require.bounded-timeouts-and-bisection.md
+      # debug
+      - briefs/debug/howto.debug-movie-frames.md
+      - briefs/debug/howto.capture-state-on-error.md
+      # skills
+      - briefs/skills/howto.browser-action-playbooks.md
+      - briefs/skills/howto.browser-byhand-work.md
+      # test
+      - briefs/test/howto.test-via-browser.md
+      - briefs/test/rule.forbid.test-goto.md
+      - briefs/test/rule.forbid.afterall-state-mutation.md
+      - briefs/test/rule.require.fast-tests.md

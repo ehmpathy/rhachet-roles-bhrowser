@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.snapshot given: [case1] browser with default tab when: [t0] browser.snapshot is called with --focused then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot
+   ├─ session: test-snapshot
+   ├─ tab: 0
+   │
+   ├─ ✓ snapshot.meta.json
+   ├─ ✓ snapshot.png
+   ├─ ✓ snapshot.html
+   ├─ ✓ snapshot.console.json
+   ├─ ✓ snapshot.storage.json
+   ├─ ✓ snapshot.network.json
+   │
+   ├─ output
+   │  ├─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.console.json
+   │  ├─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.html
+   │  ├─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.meta.json
+   │  ├─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.network.json
+   │  ├─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.png
+   │  └─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.storage.json
+   │
+   └─ done
+"
+`;
+
+exports[`browser.snapshot given: [case2] individual snapshot sub-skills when: [t0] browser.snapshot meta is called then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot meta
+   └─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.meta.json
+"
+`;
+
+exports[`browser.snapshot given: [case2] individual snapshot sub-skills when: [t1] browser.snapshot screen is called then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot screen
+   └─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.png
+"
+`;
+
+exports[`browser.snapshot given: [case2] individual snapshot sub-skills when: [t2] browser.snapshot html is called then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot html
+   └─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.html
+"
+`;
+
+exports[`browser.snapshot given: [case2] individual snapshot sub-skills when: [t3] browser.snapshot storage is called then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot storage
+   └─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.storage.json
+"
+`;
+
+exports[`browser.snapshot given: [case2] individual snapshot sub-skills when: [t4] browser.snapshot console is called then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot console
+   └─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.console.json
+"
+`;
+
+exports[`browser.snapshot given: [case2] individual snapshot sub-skills when: [t5] browser.snapshot network is called then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot network
+   └─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.network.json
+"
+`;
+
+exports[`browser.snapshot given: [case3] snapshot with --tab and --url pit-of-success when: [t0] snapshot called with --tab but no --url then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --url required with --tab
+   hint: run browser.describe to find the tab URL
+   │
+   └─ usage
+      ├─ rhx browser.describe                               # find the tab URL
+      └─ rhx browser.snapshot --focused                     # or use focused tab
+"
+`;
+
+exports[`browser.snapshot given: [case3] snapshot with --tab and --url pit-of-success when: [t1] snapshot called with neither --focused nor --tab then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --focused OR (--tab + --url) required
+   hint: use --focused for active tab or --tab N --url 'pattern' for specific tab
+   │
+   └─ usage
+      ├─ rhx browser.snapshot --focused                     # snapshot focused tab
+      └─ rhx browser.snapshot --tab 0 --url 'example.com'   # snapshot by index
+"
+`;
+
+exports[`browser.snapshot given: [case3] snapshot with --tab and --url pit-of-success when: [t2] snapshot called with --tab and valid --url then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot meta
+   └─ .cache/browser.test-snapshot/snapshot.ISOTIME.tabN/snapshot.meta.json
+"
+`;
+
+exports[`browser.snapshot given: [case3] snapshot with --tab and --url pit-of-success when: [t3] snapshot called with --tab and mismatched --url then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: URL verification failed
+   context: {"tab":0,"expected":"nonexistent.com","actual":"chrome://new-tab-page/"}
+   hint: verify you selected the correct tab via: rhx browser.describe --session test-snapshot
+"
+`;
+
+exports[`browser.snapshot given: [case5] without browser when: [t0] browser.snapshot is called without active browser then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: no browser found
+   context: {"session":"snapshot-no-browser"}
+   hint: start a browser first via: rhx browser.start --session snapshot-no-browser --mode HEADFUL
+"
+`;
+
+exports[`browser.snapshot given: [case6] --help when: [t0] browser.snapshot is called with --help then: output matches snapshot 1`] = `
+"🦎 lets get some sun...
+
+📽️ browser.snapshot --help
+   ├─ purpose: capture diagnostic snapshot of browser tab
+   ├─ usage: browser.snapshot [subcommand] --focused | --tab N --url 'pattern'
+   └─ options
+      ├─ --help: show this message
+      ├─ --focused: snapshot the focused tab
+      ├─ --tab N: tab index (0-based, negative from end)
+      ├─ --url 'pattern': verify tab URL contains pattern (required with --tab)
+      ├─ --session NAME: browser session name (default: default)
+      ├─ --output PATH: output directory prefix
+      └─ subcommands: screen, html, meta, console, network, storage
+"
+`;
