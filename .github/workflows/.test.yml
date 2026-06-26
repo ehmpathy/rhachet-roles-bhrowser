@@ -125,9 +125,6 @@ jobs:
   test-unit:
     runs-on: ubuntu-24.04
     needs: [install, test-shards-omit]
-    env:
-      # install playwright browsers into a workspace-local, cacheable dir
-      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/.cache/ms-playwright
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -143,11 +140,12 @@ jobs:
           path: ./node_modules
           key: ${{ needs.install.outputs.node-modules-cache-key }}
 
+      # .note = browser.start.sh searches ~/.cache/ms-playwright (default path)
       - name: get playwright browsers from cache
         id: playwright-cache
         uses: actions/cache@v4
         with:
-          path: ./.cache/ms-playwright
+          path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: install playwright browsers
@@ -206,9 +204,6 @@ jobs:
   test-shards-integration:
     runs-on: ubuntu-24.04
     needs: [install, enshard]
-    env:
-      # install playwright browsers into a workspace-local, cacheable dir
-      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/.cache/ms-playwright
     strategy:
       fail-fast: false
       matrix:
@@ -228,11 +223,12 @@ jobs:
           path: ./node_modules
           key: ${{ needs.install.outputs.node-modules-cache-key }}
 
+      # .note = browser.start.sh searches ~/.cache/ms-playwright (default path)
       - name: get playwright browsers from cache
         id: playwright-cache
         uses: actions/cache@v4
         with:
-          path: ./.cache/ms-playwright
+          path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: install playwright browsers
