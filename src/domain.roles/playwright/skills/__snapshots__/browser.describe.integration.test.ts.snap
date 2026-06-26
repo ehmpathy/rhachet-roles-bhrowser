@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.describe given: [case1] with active browser when: [t0] skill is invoked then: it shows tabs: stderr 1`] = `""`;
+
+exports[`browser.describe given: [case1] with active browser when: [t0] skill is invoked then: it shows tabs: stdout 1`] = `
+"🦎 rock solid
+
+📽️ browser.describe
+   ├─ session: describe-case1
+   ├─ tabs: 1
+   │
+   └─ [0] New Tab ← focused
+      chrome://new-tab-page/
+"
+`;
+
+exports[`browser.describe given: [case2] without browser when: [t0] skill is invoked without browser active then: it fails with no browser found error: stderr 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: no browser found
+   context: {"session":"describe-case2"}
+   hint: start a browser first via: rhx browser.start --session describe-case2 --mode HEADFUL
+"
+`;
+
+exports[`browser.describe given: [case2] without browser when: [t0] skill is invoked without browser active then: it fails with no browser found error: stdout 1`] = `""`;
+
+exports[`browser.describe given: [case3] multiple independent sessions when: [t0] each session is described then: shows independent tab state: session1 stderr 1`] = `""`;
+
+exports[`browser.describe given: [case3] multiple independent sessions when: [t0] each session is described then: shows independent tab state: session1 stdout 1`] = `
+"🦎 rock solid
+
+📽️ browser.describe
+   ├─ session: describe-case3a
+   ├─ tabs: 1
+   │
+   └─ [0] New Tab ← focused
+      chrome://new-tab-page/
+"
+`;
+
+exports[`browser.describe given: [case3] multiple independent sessions when: [t0] each session is described then: shows independent tab state: session2 stderr 1`] = `""`;
+
+exports[`browser.describe given: [case3] multiple independent sessions when: [t0] each session is described then: shows independent tab state: session2 stdout 1`] = `
+"🦎 rock solid
+
+📽️ browser.describe
+   ├─ session: describe-case3b
+   ├─ tabs: 1
+   │
+   └─ [0] New Tab ← focused
+      chrome://new-tab-page/
+"
+`;
+
+exports[`browser.describe given: [case4] --help when: [t0] browser.describe is called with --help then: shows help: stderr 1`] = `""`;
+
+exports[`browser.describe given: [case4] --help when: [t0] browser.describe is called with --help then: shows help: stdout 1`] = `
+"🦎 lets get some sun...
+
+📽️ browser.describe --help
+   ├─ purpose: list open tabs in the browser
+   ├─ usage: browser.describe [--session NAME]
+   └─ options
+      ├─ --help: show this message
+      └─ --session NAME: browser session name (default: default)
+"
+`;

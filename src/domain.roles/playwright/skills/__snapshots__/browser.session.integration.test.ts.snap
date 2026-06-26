@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.session given: [case1] no session state when: [t0] browser.session get is called then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+📽️ browser.session get
+   ├─ session: test-session
+   ├─ state: none
+   │
+   └─ hint
+      ├─ no session state found for 'test-session'
+      └─ to save: rhx browser.session set --session test-session --from @storage
+"
+`;
+
+exports[`browser.session given: [case1] no session state when: [t1] browser.session del is called then: output matches snapshot 1`] = `
+"🦎 basked
+
+📽️ browser.session del
+   ├─ session: test-session
+   └─ state: already clear
+"
+`;
+
+exports[`browser.session given: [case2] set from file path when: [t0] browser.session set --from path is called then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.session set
+   ├─ session: test-session
+   ├─ source: .cache/test-source-state.json
+   ├─ state: .cache/browser.test-session/storageState.json
+   ├─ cookies: 2
+   └─ localStorage keys: 2
+"
+`;
+
+exports[`browser.session given: [case2] set from file path when: [t1] browser.session get is called after set then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.session get
+   ├─ session: test-session
+   ├─ state: .cache/browser.test-session/storageState.json
+   ├─ cookies: 2
+   └─ localStorage
+      ├─ user_prefs
+      └─ cart_items
+"
+`;
+
+exports[`browser.session given: [case2] set from file path when: [t2] browser.session del is called then: output matches snapshot 1`] = `
+"🦎 suns down
+
+📽️ browser.session del
+   ├─ session: test-session
+   └─ state: cleared
+"
+`;
+
+exports[`browser.session given: [case3] set from nonexistent file when: [t0] browser.session set --from nonexistent path then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: source file not found
+   context: {"path":"/nonexistent/path.json"}
+   hint: verify the file exists at the specified path
+"
+`;
+
+exports[`browser.session given: [case4] set from @storage with active browser when: [t0] browser.session set --from @storage is called then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.session set
+   ├─ session: test-session
+   ├─ source: @storage (active browser)
+   ├─ state: .cache/browser.test-session/storageState.json
+   ├─ cookies: 1
+   └─ localStorage keys: 0
+"
+`;
+
+exports[`browser.session given: [case5] set from @storage with no browser when: [t0] browser.session set --from @storage is called then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: no browser found
+   context: {"session":"test-session"}
+   hint: start a browser first via: rhx browser.start --session test-session --mode HEADFUL
+"
+`;
+
+exports[`browser.session given: [case6] absent arguments when: [t0] browser.session is called without subcommand then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: subcommand required
+   context: {"valid":["get","set","del"]}
+   │
+   └─ usage
+      ├─ rhx browser.session get --session foo
+      ├─ rhx browser.session set --session foo --from /path/to/state.json
+      ├─ rhx browser.session set --session foo --from @storage
+      └─ rhx browser.session del --session foo
+"
+`;
+
+exports[`browser.session given: [case6] absent arguments when: [t1] browser.session set is called without --from then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --from required for set
+   hint: specify source file or @storage
+   │
+   └─ usage
+      ├─ rhx browser.session set --session test-session --from /path/to/state.json
+      └─ rhx browser.session set --session test-session --from @storage
+"
+`;
+
+exports[`browser.session given: [case6] absent arguments when: [t2] browser.session get is called without --session then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --session required
+   context: {"subcommand":"get"}
+   hint: specify session name, e.g., --session default
+"
+`;
+
+exports[`browser.session given: [case7] --help when: [t0] browser.session is called with --help then: output matches snapshot 1`] = `
+"🦎 lets get some sun...
+
+📽️ browser.session --help
+   ├─ purpose: manage browser session state (cookies, localStorage)
+   ├─ usage: browser.session <get|set|del> --session NAME [--from PATH]
+   └─ options
+      ├─ --help: show this message
+      ├─ get: inspect session state
+      ├─ set: import session state from file or active browser
+      ├─ del: clear session state
+      ├─ --session NAME: session name (required)
+      └─ --from PATH: source for set (file path or @storage)
+"
+`;

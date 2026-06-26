@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`cache.expire given: [case1] cache files exist for account when: [t0] cache.expire is called then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ cache.expire
+   ├─ account: test@example.com
+   ├─ hash: 973dfe463ec8
+   ├─ cache: .cache/TIMESTAMP
+   ├─ files: 2
+   └─ expired
+      ├─ getProfile.973dfe463ec8..abc123.v1.json
+      └─ getSubscriptions.973dfe463ec8..def456.v1.json
+"
+`;
+
+exports[`cache.expire given: [case2] no cache files exist for account when: [t0] cache.expire is called then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+📽️ cache.expire
+   ├─ account: nobody@example.com
+   ├─ hash: e788ea201469
+   ├─ cache: .cache/TIMESTAMP
+   ├─ files: 0
+   └─ hint: no cache files found for this account
+"
+`;
+
+exports[`cache.expire given: [case3] --for is not provided when: [t0] cache.expire is called without --for then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --for required
+   hint: specify account email, e.g., --for user@example.com
+"
+`;
+
+exports[`cache.expire given: [case4] --cache-dir is not provided when: [t0] cache.expire is called without --cache-dir then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --cache-dir required
+   hint: rhx cache.expire --for user@example.com --cache-dir .cache/myapp
+"
+`;
+
+exports[`cache.expire given: [case6] --help when: [t0] cache.expire is called with --help then: output matches snapshot 1`] = `
+"🦎 rock solid
+
+📽️ cache.expire --help
+
+usage:
+  rhx cache.expire --for EMAIL --cache-dir PATH
+
+options:
+  --help                show this message
+  --for EMAIL           account email to expire cache for (required)
+  --cache-dir PATH      path to cache directory (required)
+
+description:
+  expires (deletes) all cache files for a given account.
+  next query for this account will trigger a fresh scrape.
+
+example:
+  rhx cache.expire --for user@example.com --cache-dir .cache/myapp
+"
+`;

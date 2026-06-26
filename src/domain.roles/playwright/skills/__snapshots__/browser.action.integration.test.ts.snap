@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.action given: [case1] valid playbook when: [t0] browser.action is called with --play then: output matches snapshot 1`] = `
+"🦎 run playbook
+   ├─ file: .cache/test-playbooks/goto-example.play.ts
+   ├─ tab: 0
+   │
+   ├─ url before: chrome://new-tab-page/
+   ├─ url after: about:blank
+   ├─ result: {"status":"ok"}
+   └─ done
+"
+`;
+
+exports[`browser.action given: [case2] playbook not found when: [t0] browser.action is called with nonexistent playbook then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: playbook not found
+   context: {"path":".cache/test-playbooks/nonexistent.play.ts"}
+   hint: verify the playbook file exists at the specified path
+"
+`;
+
+exports[`browser.action given: [case3] tab selection via --tab when: [t0] browser.action called with --tab 0 then: output matches snapshot 1`] = `
+"🦎 run playbook
+   ├─ file: .cache/test-playbooks/simple-action.play.ts
+   ├─ tab: 0
+   │
+   ├─ url before: about:blank
+   ├─ url after: about:blank
+   ├─ result: {"title":""}
+   └─ done
+"
+`;
+
+exports[`browser.action given: [case4] playbook with error when: [t0] browser.action is called then: output matches snapshot 1`] = `
+"🦎 run playbook
+   ├─ file: .cache/test-playbooks/error-playbook.play.ts
+   ├─ tab: 0
+   │
+   ├─ error: UnexpectedCodePathError: intentional test error
+   ├─ context: {"hint":"test playbook designed to fail"}
+   └─ stack:     at action ($REPO/error-playbook.play.ts:6:9)
+          at executeAction ($REPO/browser.action.ts:75:24)
+          at runBrowserAction ($REPO/browser.action.ts:105:11)
+"
+`;
+
+exports[`browser.action given: [case5] --play argument absent when: [t0] browser.action is called without --play then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --play required
+   context: {"session":"test-action","tab":0}
+   │
+   ├─ usage
+   │  ├─ rhx browser.action --play .play/permanent/my-playbook.play.ts
+   │  └─ rhx browser.action --play .play/permanent/my-playbook.play.ts --tab 2
+   │
+   └─ playbook format (.play.ts)
+      ├─
+      │
+      │  import type { Page, Browser } from 'playwright';
+      │  export const action = async (input: { page: Page; browser: Browser }) => {
+      │    await input.page.goto('https://example.com');
+      │    return { success: true };
+      │  };
+      │
+      └─
+"
+`;
+
+exports[`browser.action given: [case6] without browser when: [t0] browser.action is called without active browser then: output matches snapshot 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: no browser found
+   context: {"session":"action-no-browser"}
+   hint: start a browser first via: rhx browser.start --session action-no-browser --mode HEADFUL
+"
+`;
+
+exports[`browser.action given: [case7] --help when: [t0] browser.action is called with --help then: output matches snapshot 1`] = `
+"🦎 lets get some sun...
+
+📽️ browser.action --help
+   ├─ purpose: execute browser automation playbook
+   ├─ usage: browser.action --play <playbook.play.ts> [--tab N] [--session NAME]
+   └─ options
+      ├─ --help: show this message
+      ├─ --play PATH: playbook file to execute (required)
+      ├─ --tab N: tab index to operate on (default: 0)
+      └─ --session NAME: browser session name (default: default)
+"
+`;

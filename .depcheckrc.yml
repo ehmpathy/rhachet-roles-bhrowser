@@ -24,4 +24,7 @@ ignores:
   - rhachet-brains-anthropic
   - rhachet-roles-bhrowser
   - rhachet-roles-rhachet
+  - rhachet-brains-xai
+  - rhachet-brains-fireworksai
+  - playwright
   - test-fns

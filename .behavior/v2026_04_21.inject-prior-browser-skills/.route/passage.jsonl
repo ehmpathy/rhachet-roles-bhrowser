@@ -1,0 +1,119 @@
+{"stone":"1.vision","status":"blocked","blocker":"review.self","reason":"review.self required: has-grounded-in-reality"}
+{"stone":"1.vision","status":"blocked","blocker":"review.self","reason":"review.self required: has-questioned-assumptions"}
+{"stone":"1.vision","status":"blocked","blocker":"approval","reason":"wait for human approval"}
+{"stone":"1.vision","status":"approved"}
+{"stone":"1.vision","status":"passed"}
+{"stone":"2.1.criteria.blackbox","status":"passed"}
+{"stone":"2.1.criteria.blackbox","status":"passed"}
+{"stone":"2.2.criteria.blackbox.matrix","status":"passed"}
+{"stone":"2.2.criteria.blackbox.matrix","status":"passed"}
+{"stone":"3.1.1.research.external.product.flagged._","status":"passed"}
+{"stone":"3.1.1.research.external.product.flagged._","status":"passed"}
+{"stone":"3.1.3.research.internal.product.code.prod._","status":"passed"}
+{"stone":"3.1.3.research.internal.product.code.test._","status":"passed"}
+{"stone":"3.3.1.blueprint.product","status":"blocked","blocker":"review.self","reason":"review.self required: has-research-citations"}
+{"stone":"3.3.1.blueprint.product","status":"blocked","blocker":"review.self","reason":"review.self required: has-behavior-declaration-adherance"}
+{"stone":"3.3.1.blueprint.product","status":"blocked","blocker":"review.self","reason":"review.self required: has-role-standards-adherance"}
+{"stone":"3.3.1.blueprint.product","status":"blocked","blocker":"review.self","reason":"review.self required: has-role-standards-coverage"}
+{"stone":"3.3.1.blueprint.product","status":"blocked"}
+{"stone":"1.vision","status":"approved"}
+{"stone":"3.3.1.blueprint.product","status":"blocked","blocker":"review.peer","reason":"no review files found for hash e8eb265d; wait for human approval"}
+{"stone":"3.3.1.blueprint.product","status":"blocked","blocker":"review.peer","reason":"no review files found for hash e8eb265d; wait for human approval"}
+{"stone":"3.3.1.blueprint.product","status":"blocked"}
+{"stone":"3.3.1.blueprint.product","status":"approved"}
+{"stone":"3.3.1.blueprint.product","status":"blocked","blocker":"review.peer","reason":"no review files found for hash e8eb265d"}
+{"stone":"3.3.1.blueprint.product","status":"passed"}
+{"stone":"4.1.roadmap","status":"passed"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.self","reason":"review.self required: has-pruned-yagni"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.self","reason":"review.self required: behavior-declaration-coverage"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (11 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (12 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (10 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (12 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (12 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (8 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (6 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (10 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (9 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"no review files found for hash 589614ad"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (7 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"no review files found for hash c506d2c9"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (4 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (10 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (8 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (7 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (8 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (7 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (8 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (7 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (10 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (2 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (3 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"no review files found for hash bcf8c4a7"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (5 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (7 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (9 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (3 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (6 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (6 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (6 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (5 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"no review files found for hash 8433c359"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (2 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (3 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"no review files found for hash d7678f2f"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (7 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (8 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (4 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"malfunction"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"no review files found for hash 3ff501bf"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.peer","reason":"blockers exceed threshold (2 > 0)"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"approved"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"overruled"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"passed"}
+{"stone":"5.3.verification","status":"blocked","blocker":"review.self","reason":"review.self required: has-behavior-coverage"}
+{"stone":"5.3.verification","status":"blocked","blocker":"review.self","reason":"review.self required: has-all-tests-passed"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked","blocker":"review.peer.exhausted","reason":"peer reviewer budget exhausted: ergo-contract-snapshots, ergo-acceptance-journey-coverage, ergo-snapshot-visual-blemishes"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked","blocker":"review.peer.exhausted","reason":"peer reviewer budget exhausted: ergo-snapshot-visual-blemishes"}
+{"stone":"5.3.verification","status":"blocked","blocker":"review.peer.exhausted","reason":"peer reviewer budget exhausted: ergo-snapshot-visual-blemishes"}
+{"stone":"5.3.verification","status":"blocked","blocker":"review.peer.exhausted","reason":"peer reviewer budget exhausted: ergo-snapshot-visual-blemishes"}
+{"stone":"5.3.verification","status":"approved"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"malfunction"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"overruled"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"overruled"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"blocked"}
+{"stone":"5.3.verification","status":"passed"}
+{"stone":"5.5.playtest","status":"blocked","blocker":"review.self","reason":"review.self required: has-clear-instructions"}
+{"stone":"5.5.playtest","status":"blocked","blocker":"review.self","reason":"review.self required: has-clear-instructions"}
+{"stone":"5.5.playtest","status":"blocked","blocker":"approval","reason":"wait for human approval"}

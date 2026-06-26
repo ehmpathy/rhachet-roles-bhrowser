@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.journey given: [case1] happy path workflow when: [t0] browser.start launches browser then: output matches snapshot 1`] = `
+"🦎 lets get some sun
+
+📽️ browser.start
+   ├─ session: test-journey
+   ├─ mode: HEADLESS
+   ├─ port: PORT
+   ├─ wsEndpoint: ws://localhost:PORT/devtools/browser/UUID
+   ├─ state: .cache/browser.test-journey/ws-endpoint
+   │
+   ├─ tests will auto-discover and reuse this window
+   │
+   └─ to stop: rhx browser.stop --session test-journey
+"
+`;
+
+exports[`browser.journey given: [case1] happy path workflow when: [t1] browser.describe lists tabs then: output matches snapshot 1`] = `
+"🦎 rock solid
+
+📽️ browser.describe
+   ├─ session: test-journey
+   ├─ tabs: 1
+   │
+   └─ [0] New Tab ← focused
+      chrome://new-tab-page/
+"
+`;
+
+exports[`browser.journey given: [case1] happy path workflow when: [t2] browser.action runs playbook then: output matches snapshot 1`] = `
+"🦎 run playbook
+   ├─ file: .cache/test-playbooks/navigate.play.ts
+   ├─ tab: 0
+   │
+   ├─ url before: chrome://new-tab-page/
+   ├─ url after: https://example.com/
+   ├─ result: {"navigated":true}
+   └─ done
+"
+`;
+
+exports[`browser.journey given: [case1] happy path workflow when: [t3] browser.snapshot captures state then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.snapshot
+   ├─ session: test-journey
+   ├─ tab: 0
+   │
+   ├─ ✓ snapshot.meta.json
+   ├─ ✓ snapshot.png
+   ├─ ✓ snapshot.html
+   ├─ ✓ snapshot.console.json
+   ├─ ✓ snapshot.storage.json
+   ├─ ✓ snapshot.network.json
+   │
+   ├─ output
+   │  ├─ .cache/browser.test-journey/snapshot.ISOTIME.tabN/snapshot.console.json
+   │  ├─ .cache/browser.test-journey/snapshot.ISOTIME.tabN/snapshot.html
+   │  ├─ .cache/browser.test-journey/snapshot.ISOTIME.tabN/snapshot.meta.json
+   │  ├─ .cache/browser.test-journey/snapshot.ISOTIME.tabN/snapshot.network.json
+   │  ├─ .cache/browser.test-journey/snapshot.ISOTIME.tabN/snapshot.png
+   │  └─ .cache/browser.test-journey/snapshot.ISOTIME.tabN/snapshot.storage.json
+   │
+   └─ done
+"
+`;
+
+exports[`browser.journey given: [case1] happy path workflow when: [t4] browser.stop terminates browser then: output matches snapshot 1`] = `
+"🦎 suns down
+
+📽️ browser.stop
+   ├─ session: test-journey
+   ├─ port: PORT
+   │
+   ├─ browser: stopped
+   └─ state: removed
+"
+`;
+
+exports[`browser.journey given: [case2] blocked state workflow when: [t2] browser.action runs playbook that fails then: output matches snapshot 1`] = `
+"🦎 run playbook
+   ├─ file: .cache/test-playbooks/fail.play.ts
+   ├─ tab: 0
+   │
+   ├─ error: UnexpectedCodePathError: simulated playbook failure
+   ├─ context: {"hint":"test playbook designed to fail"}
+   └─ stack:     at action ($REPO/fail.play.ts:4:9)
+          at executeAction ($REPO/browser.action.ts:75:24)
+          at runBrowserAction ($REPO/browser.action.ts:105:11)
+"
+`;
+
+exports[`browser.journey given: [case3] session management workflow when: [t1] browser.session set saves state to file then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.session set
+   ├─ session: test-journey
+   ├─ source: @storage (active browser)
+   ├─ state: .cache/browser.test-journey/storageState.json
+   ├─ cookies: 1
+   └─ localStorage keys: 0
+"
+`;
+
+exports[`browser.journey given: [case3] session management workflow when: [t4] browser.session set restores state from file then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.session set
+   ├─ session: test-journey
+   ├─ source: .cache/browser.test-journey/storageState.backup.json
+   ├─ state: .cache/browser.test-journey/storageState.json
+   ├─ cookies: 1
+   └─ localStorage keys: 0
+"
+`;
+
+exports[`browser.journey given: [case3] session management workflow when: [t5] browser.session get shows current state then: output matches snapshot 1`] = `
+"🦎 toasty
+
+📽️ browser.session get
+   ├─ session: test-journey
+   ├─ state: .cache/browser.test-journey/storageState.json
+   ├─ cookies: 1
+   └─ localStorage
+      └─ (empty)
+"
+`;

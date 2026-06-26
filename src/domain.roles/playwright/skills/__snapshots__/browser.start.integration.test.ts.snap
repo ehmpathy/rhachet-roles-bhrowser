@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`browser.start given: [case1] --mode HEADLESS when: [t0] skill is invoked then: it starts browser and writes wsEndpoint file: stderr 1`] = `""`;
+
+exports[`browser.start given: [case1] --mode HEADLESS when: [t0] skill is invoked then: it starts browser and writes wsEndpoint file: stdout 1`] = `
+"🦎 lets get some sun
+
+📽️ browser.start
+   ├─ session: start-case1
+   ├─ mode: HEADLESS
+   ├─ port: PORT
+   ├─ wsEndpoint: ws://localhost:PORT/devtools/browser/UUID
+   ├─ state: .cache/browser.start-case1/ws-endpoint
+   │
+   ├─ tests will auto-discover and reuse this window
+   │
+   └─ to stop: rhx browser.stop --session start-case1
+"
+`;
+
+exports[`browser.start given: [case2] without --mode when: [t0] skill is invoked without --mode then: it fails with usage message: stderr 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: --mode required
+   context: {"valid":["HEADFUL","HEADLESS"]}
+   │
+   └─ usage
+      ├─ rhx browser.start --mode HEADFUL
+      └─ rhx browser.start --mode HEADLESS
+"
+`;
+
+exports[`browser.start given: [case2] without --mode when: [t0] skill is invoked without --mode then: it fails with usage message: stdout 1`] = `""`;
+
+exports[`browser.start given: [case3] with invalid --mode when: [t0] skill is invoked with invalid mode then: it fails with error message: stderr 1`] = `
+"🦎 cold snap
+
+✋ ConstraintError: invalid mode
+   context: {"given":"INVALID","valid":["HEADFUL","HEADLESS"]}
+"
+`;
+
+exports[`browser.start given: [case3] with invalid --mode when: [t0] skill is invoked with invalid mode then: it fails with error message: stdout 1`] = `""`;
+
+exports[`browser.start given: [case4] --refresh kills extant browser when: [t0] browser is started then refreshed then: new browser replaces old one: --refresh stderr 1`] = `""`;
+
+exports[`browser.start given: [case4] --refresh kills extant browser when: [t0] browser is started then refreshed then: new browser replaces old one: --refresh stdout 1`] = `
+"🦎 lets get some sun
+
+📽️ browser.start
+   ├─ session: start-case4
+   ├─ mode: HEADLESS
+   ├─ port: PORT
+   ├─ wsEndpoint: ws://localhost:PORT/devtools/browser/UUID
+   ├─ state: .cache/browser.start-case4/ws-endpoint
+   │
+   ├─ tests will auto-discover and reuse this window
+   │
+   └─ to stop: rhx browser.stop --session start-case4
+"
+`;
+
+exports[`browser.start given: [case5] --help when: [t0] browser.start is called with --help then: shows help: stderr 1`] = `""`;
+
+exports[`browser.start given: [case5] --help when: [t0] browser.start is called with --help then: shows help: stdout 1`] = `
+"🦎 lets get some sun...
+
+📽️ browser.start --help
+   ├─ purpose: start a persistent browser for automation
+   ├─ usage: browser.start --mode HEADFUL|HEADLESS [--session NAME] [--refresh]
+   └─ options
+      ├─ --help: show this message
+      ├─ --mode: HEADFUL (visible) or HEADLESS (background) (required)
+      ├─ --session NAME: browser session name (default: default)
+      └─ --refresh: kill extant browser before starting new one
+"
+`;
