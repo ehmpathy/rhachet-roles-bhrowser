@@ -217,9 +217,18 @@ CHROME_FLAGS=(
   --password-store=basic                # use basic store (no prompts)
 )
 
+# extra headless flags for ci/container/root environments
+# .why = chrome aborts (core dumped) under root or limited /dev/shm without these
+#        - --no-sandbox: sandbox cannot init as root (ci runners)
+#        - --disable-dev-shm-usage: avoid crashes from small /dev/shm in containers
+HEADLESS_FLAGS=(
+  --no-sandbox
+  --disable-dev-shm-usage
+)
+
 # launch chromium directly (not via playwright) so it stays alive after skill exits
 if [[ "$MODE" == "HEADLESS" ]]; then
-  nohup "$CHROMIUM_BIN" --headless "${CHROME_FLAGS[@]}" > /dev/null 2>&1 &
+  nohup "$CHROMIUM_BIN" --headless "${HEADLESS_FLAGS[@]}" "${CHROME_FLAGS[@]}" > /dev/null 2>&1 &
 else
   nohup "$CHROMIUM_BIN" "${CHROME_FLAGS[@]}" > /dev/null 2>&1 &
 fi
